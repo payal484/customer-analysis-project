@@ -93,9 +93,7 @@ An interactive Power BI dashboard was developed to present the analysis visually
 
 The dashboard supports the exploration of customer shopping patterns, product performance, revenue trends, discount usage, and subscription behavior.
 
-**Dashboard Preview:** Add your Power BI dashboard screenshot here.
-
-<!-- Replace the placeholder above with an image link after uploading your dashboard screenshot to the repository. -->
+**Dashboard Preview:** <img width="1355" height="734" alt="image" src="https://github.com/user-attachments/assets/8d7cda66-62d4-4966-a42a-eccc242f0ca5" />
 
 ## Business Recommendations
 
@@ -120,38 +118,6 @@ Through this project, I gained practical experience in:
 - Presenting analytical findings through Power BI visualizations.
 - Translating data analysis into actionable business recommendations.
 
-## Project Structure
-
-The repository can be organized as follows:
-
-```text
-customer-shopping-behavior-analysis/
-│
-├── data/
-│   └── README.md
-│
-├── notebooks/
-│   └── customer_shopping_analysis.ipynb
-│
-├── python/
-│   └── data_cleaning.py
-│
-├── sql/
-│   └── business_analysis.sql
-│
-├── powerbi/
-│   └── customer_shopping_dashboard.pbix
-│
-├── screenshots/
-│   └── dashboard.png
-│
-├── reports/
-│   └── business_recommendations.pdf
-│
-└── README.md
-```
-
-*Note: This is a suggested structure. Replace the example filenames with the actual files included in your repository. The `data/README.md` file can document how to obtain the dataset if you do not plan to upload the raw data.*
 
 ## How to Explore This Project
 
