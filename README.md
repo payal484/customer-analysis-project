@@ -1,197 +1,130 @@
-Customer Shopping Behavior Analysis
+# Customer Shopping Behavior Analysis
 
-Project Overview
+## Project Overview
 
 This project analyzes customer shopping behavior to identify purchasing patterns, customer segments, product preferences, discount usage, and subscription trends. The objective is to generate actionable business insights that can help a retail company improve sales, strengthen customer engagement, and build long-term customer loyalty.
 
-The project uses Python, PostgreSQL, and Power BI to transform raw transactional data into meaningful business insights and recommendations.
+The project uses **Python, PostgreSQL, and Power BI** to transform raw transactional data into meaningful business insights and recommendations.
 
-Business Problem Statement
+## Business Problem Statement
 
 A retail company wants to better understand its customers' shopping behavior to improve sales, customer satisfaction, and long-term loyalty.
 
 The goal of this analysis is to answer the following business question:
 
-How can the company leverage consumer shopping data to identify trends, improve customer engagement, and optimize marketing and product strategies?
+**How can the company leverage consumer shopping data to identify trends, improve customer engagement, and optimize marketing and product strategies?**
 
-Project Objectives
+## Project Objectives
 
-Clean and prepare raw customer shopping data for analysis.
+- Clean and prepare raw customer shopping data for analysis.
+- Explore customer demographics and purchasing patterns.
+- Analyze revenue, discounts, shipping preferences, and subscription behavior.
+- Segment customers based on their purchase history.
+- Identify popular products and highly rated items.
+- Develop an interactive Power BI dashboard.
+- Provide actionable recommendations to support data-driven business decisions.
 
-Explore customer demographics and purchasing patterns.
-
-Analyze revenue, discounts, shipping preferences, and subscription behavior.
-
-Segment customers based on their purchase history.
-
-Identify popular products and highly rated items.
-
-Develop an interactive Power BI dashboard.
-
-Provide actionable recommendations to support data-driven business decisions.
-
-Dataset Overview
+## Dataset Overview
 
 The dataset contains customer shopping transaction records with the following characteristics:
 
-Attribute
+| Attribute | Details |
+|---|---|
+| Total Records | 3,900 |
+| Total Columns | 18 |
+| Missing Values | 37 in the Review Rating column |
+| Data Type | Customer shopping and transaction data |
 
-Details
+### Key Features
 
-Total Records
+- **Customer Demographics:** Age, gender, location, and subscription status.
+- **Purchase Information:** Purchased item, category, purchase amount, season, size, and color.
+- **Shopping Behavior:** Discount usage, previous purchases, purchase frequency, and review ratings.
+- **Order Preferences:** Shipping type and promotional purchase information.
 
-3,900
+## Tools and Technologies
 
-Total Columns
+| Tool | Purpose |
+|---|---|
+| Python | Data cleaning, transformation, exploratory data analysis, and feature engineering |
+| Pandas | Data manipulation and analysis |
+| PostgreSQL | Database management and SQL-based business analysis |
+| SQL | Business queries, aggregations, customer segmentation, and trend analysis |
+| Power BI | Interactive dashboard and data visualization |
+| GitHub | Project documentation and version control |
 
-18
+## Project Workflow
 
-Missing Values
-
-37 in the Review Rating column
-
-Data Type
-
-Customer shopping and transaction data
-
-Key Features
-
-Customer Demographics: Age, gender, location, and subscription status.
-
-Purchase Information: Purchased item, category, purchase amount, season, size, and color.
-
-Shopping Behavior: Discount usage, previous purchases, purchase frequency, and review ratings.
-
-Order Preferences: Shipping type and promotional purchase information.
-
-Tools and Technologies
-
-Tool
-
-Purpose
-
-Python
-
-Data cleaning, transformation, exploratory data analysis, and feature engineering
-
-Pandas
-
-Data manipulation and analysis
-
-PostgreSQL
-
-Database management and SQL-based business analysis
-
-SQL
-
-Business queries, aggregations, customer segmentation, and trend analysis
-
-Power BI
-
-Interactive dashboard and data visualization
-
-GitHub
-
-Project documentation and version control
-
-Project Workflow
-
-1. Data Cleaning and Exploratory Data Analysis — Python
+### 1. Data Cleaning and Exploratory Data Analysis — Python
 
 The raw dataset was explored and prepared for further analysis using Python.
 
 Key activities included:
 
-Loading the dataset using Pandas.
+- Loading the dataset using Pandas.
+- Examining the dataset structure using `df.info()` and generating summary statistics using `df.describe()`.
+- Identifying missing values and handling 37 missing review ratings using the median rating of the corresponding product category.
+- Standardizing column names using snake_case for consistency and readability.
+- Creating an `age_group` feature to categorize customers by age.
+- Creating a `purchase_frequency_days` feature from the available purchase data.
+- Checking the relationship between `discount_applied` and `promo_code_used` and removing the redundant `promo_code_used` column.
+- Connecting Python to PostgreSQL and loading the cleaned DataFrame into the database.
 
-Examining the dataset structure using df.info() and generating summary statistics using df.describe().
-
-Identifying missing values and handling 37 missing review ratings using the median rating of the corresponding product category.
-
-Standardizing column names using snake_case for consistency and readability.
-
-Creating an age_group feature to categorize customers by age.
-
-Creating a purchase_frequency_days feature from the available purchase data.
-
-Checking the relationship between discount_applied and promo_code_used and removing the redundant promo_code_used column.
-
-Connecting Python to PostgreSQL and loading the cleaned DataFrame into the database.
-
-2. SQL Analysis — PostgreSQL
+### 2. SQL Analysis — PostgreSQL
 
 SQL queries were used to answer key business questions and uncover customer purchasing trends.
 
 The analysis covered:
 
-Revenue by Gender: Compared total revenue generated by male and female customers.
+1. **Revenue by Gender:** Compared total revenue generated by male and female customers.
+2. **High-Spending Discount Users:** Identified customers who used discounts but spent more than the average purchase amount.
+3. **Top-Rated Products:** Identified the five products with the highest average review ratings.
+4. **Shipping Type Comparison:** Compared average purchase amounts for Standard and Express shipping.
+5. **Subscription Analysis:** Compared average spending and total revenue between subscribers and non-subscribers.
+6. **Discount-Dependent Products:** Identified five products with the highest percentage of discounted purchases.
+7. **Customer Segmentation:** Classified customers into New, Returning, and Loyal segments based on purchase history.
+8. **Top Products by Category:** Identified the three most purchased products within each category.
+9. **Repeat Purchases and Subscriptions:** Examined whether customers with more than five purchases were more likely to subscribe.
+10. **Revenue by Age Group:** Calculated the revenue contribution of different customer age groups.
 
-High-Spending Discount Users: Identified customers who used discounts but spent more than the average purchase amount.
-
-Top-Rated Products: Identified the five products with the highest average review ratings.
-
-Shipping Type Comparison: Compared average purchase amounts for Standard and Express shipping.
-
-Subscription Analysis: Compared average spending and total revenue between subscribers and non-subscribers.
-
-Discount-Dependent Products: Identified five products with the highest percentage of discounted purchases.
-
-Customer Segmentation: Classified customers into New, Returning, and Loyal segments based on purchase history.
-
-Top Products by Category: Identified the three most purchased products within each category.
-
-Repeat Purchases and Subscriptions: Examined whether customers with more than five purchases were more likely to subscribe.
-
-Revenue by Age Group: Calculated the revenue contribution of different customer age groups.
-
-3. Dashboard Development — Power BI
+### 3. Dashboard Development — Power BI
 
 An interactive Power BI dashboard was developed to present the analysis visually and make business insights easier to interpret.
 
 The dashboard supports the exploration of customer shopping patterns, product performance, revenue trends, discount usage, and subscription behavior.
 
-Dashboard Preview: Add your Power BI dashboard screenshot here.
+**Dashboard Preview:** Add your Power BI dashboard screenshot here.
 
 <!-- Replace the placeholder above with an image link after uploading your dashboard screenshot to the repository. -->
 
-Business Recommendations
+## Business Recommendations
 
 Based on the business objectives and areas analyzed, the following recommendations can support better retail decision-making:
 
-Increase Subscription Adoption: Promote exclusive benefits and incentives to encourage customers to subscribe.
+- **Increase Subscription Adoption:** Promote exclusive benefits and incentives to encourage customers to subscribe.
+- **Strengthen Customer Loyalty:** Introduce loyalty programs and rewards to encourage repeat purchases and move customers into the Loyal segment.
+- **Optimize Discount Strategies:** Evaluate discount-dependent products and balance promotional effectiveness with profitability.
+- **Improve Product Marketing:** Highlight highly rated and frequently purchased products in marketing campaigns.
+- **Use Targeted Marketing:** Focus marketing efforts on high-revenue age groups and evaluate customer preferences associated with Express shipping.
+- **Improve Customer Engagement:** Use purchasing patterns and customer segments to develop more relevant marketing strategies.
 
-Strengthen Customer Loyalty: Introduce loyalty programs and rewards to encourage repeat purchases and move customers into the Loyal segment.
-
-Optimize Discount Strategies: Evaluate discount-dependent products and balance promotional effectiveness with profitability.
-
-Improve Product Marketing: Highlight highly rated and frequently purchased products in marketing campaigns.
-
-Use Targeted Marketing: Focus marketing efforts on high-revenue age groups and evaluate customer preferences associated with Express shipping.
-
-Improve Customer Engagement: Use purchasing patterns and customer segments to develop more relevant marketing strategies.
-
-Key Learnings
+## Key Learnings
 
 Through this project, I gained practical experience in:
 
-Cleaning and transforming transactional data using Python.
+- Cleaning and transforming transactional data using Python.
+- Handling missing values and performing feature engineering.
+- Connecting Python with a PostgreSQL database.
+- Writing SQL queries to solve business-oriented analytical questions.
+- Analyzing customer segments, revenue patterns, and purchasing behavior.
+- Presenting analytical findings through Power BI visualizations.
+- Translating data analysis into actionable business recommendations.
 
-Handling missing values and performing feature engineering.
-
-Connecting Python with a PostgreSQL database.
-
-Writing SQL queries to solve business-oriented analytical questions.
-
-Analyzing customer segments, revenue patterns, and purchasing behavior.
-
-Presenting analytical findings through Power BI visualizations.
-
-Translating data analysis into actionable business recommendations.
-
-Project Structure
+## Project Structure
 
 The repository can be organized as follows:
 
+```text
 customer-shopping-behavior-analysis/
 │
 ├── data/
@@ -216,21 +149,21 @@ customer-shopping-behavior-analysis/
 │   └── business_recommendations.pdf
 │
 └── README.md
+```
 
-Note: This is a suggested structure. Replace the example filenames with the actual files included in your repository. The data/README.md file can document how to obtain the dataset if you do not plan to upload the raw data.
+*Note: This is a suggested structure. Replace the example filenames with the actual files included in your repository. The `data/README.md` file can document how to obtain the dataset if you do not plan to upload the raw data.*
 
-How to Explore This Project
+## How to Explore This Project
 
-Review the Python notebook or scripts to understand the data cleaning and transformation process.
+1. Review the Python notebook or scripts to understand the data cleaning and transformation process.
+2. Open the SQL file to explore the business questions and corresponding queries.
+3. Open the Power BI dashboard file using Power BI Desktop to explore the visualizations.
+4. Review the project report and recommendations to understand the business implications of the analysis.
 
-Open the SQL file to explore the business questions and corresponding queries.
-
-Open the Power BI dashboard file using Power BI Desktop to explore the visualizations.
-
-Review the project report and recommendations to understand the business implications of the analysis.
-
-Conclusion
+## Conclusion
 
 This project demonstrates an end-to-end data analytics workflow, from data preparation and database integration to SQL-based business analysis and interactive dashboard development.
 
 By combining Python, PostgreSQL, and Power BI, the project illustrates how customer transaction data can be used to investigate purchasing behavior, understand customer segments, and support more informed retail marketing and customer engagement decisions.
+
+
